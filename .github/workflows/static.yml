@@ -24,15 +24,17 @@ jobs:
           # We removed the caching requirement here!
 
       - name: Install dependencies
+        working-directory: ./e3t-—-engagement-estimation-&-evaluation-tool
         run: npm install
 
       - name: Build
+        working-directory: ./e3t-—-engagement-estimation-&-evaluation-tool
         run: npm run build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist/'
+          path: './e3t-—-engagement-estimation-&-evaluation-tool/dist/'
 
   deploy:
     needs: build_site
